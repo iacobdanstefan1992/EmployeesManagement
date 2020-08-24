@@ -1,6 +1,6 @@
 package Main;
 
-import Entity.Product;
+//import Entity.Product;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -59,13 +59,13 @@ public class Main_first {
 
         //Select All products
 
-        Query query = entityManager.createQuery("Select e " + "from Product e " + "ORDER BY e.name ASC");
-        List<Product> list = (List<Product>)query.getResultList();
-        for(Product e : list){
-            System.out.println("Product ID : "+e.getId());
-            System.out.println("\t Product Name : "+e.getName());
-            System.out.println("\t Product Price : "+e.getPrice());
-            System.out.println("\t Product Date : "+e.getDate());
-        }
+        //Query query = entityManager.createQuery("Select e " + "from Product e " + "ORDER BY e.name ASC");
+        //List<Product> list = (List<Product>)query.getResultList();
+        //for(Product e : list){
+        //    System.out.println("Product ID : "+e.getId());
+        //    System.out.println("\t Product Name : "+e.getName());
+        //    System.out.println("\t Product Price : "+e.getPrice());
+        //    System.out.println("\t Product Date : "+e.getDate());
+        //}
     }
 }
