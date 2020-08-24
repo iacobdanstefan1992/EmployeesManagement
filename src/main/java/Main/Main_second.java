@@ -72,7 +72,6 @@ public class Main_second {
                 entityTransaction.commit();
                 entityManager.close();
                 System.out.println("A new employee was added.");
-                System.exit(0);
             }
         }catch (Exception e){
             entityTransaction.rollback();
