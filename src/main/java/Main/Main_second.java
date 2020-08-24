@@ -3,7 +3,6 @@ package Main;
 import Entity.Department;
 import Entity.Employee;
 import Entity.JobCategory;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -30,7 +29,7 @@ public class Main_second {
 
             JobCategory jobCategory = entityManager.find(JobCategory.class, 1);
 
-            Employee employee = entityManager.find(Employee.class,1);
+            Employee employee = entityManager.find(Employee.class, 1);
 
             Employee employee1 = new Employee();
             employee1.setFirstName("Iacob");
@@ -55,12 +54,10 @@ public class Main_second {
             if(employee.getFirstName().equals(employee1.getFirstName()) && employee.getLastName().equals(employee1.getLastName())){
                 System.out.println("This user is in our database.");
                 System.exit(0);
-
             }else if(employee1.getFirstName().isEmpty() && employee1.getLastName().isEmpty() && employee1.getAddress().isEmpty() &&
                      employee1.getCp().isEmpty() && employee1.getTelephone().isEmpty() && employee1.getEmail().isEmpty()){
                 System.out.println("One of the fields is empty.");
                 System.exit(0);
-
             }else{
                 try{
                     entityTransaction.begin();
