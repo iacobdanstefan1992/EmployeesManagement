@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MySQL {
-
     public static Connection getConnection() throws Exception {
-        //Connection to MySQL
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/employees_management";
         String username = "root";
@@ -17,7 +15,6 @@ public class MySQL {
         return DriverManager.getConnection(url, username, password);
     }
 
-    //Create employee, department and jobCategory tables
     private static final String employee, department, jobCategory;
     static {
         employee = "create table employee ( " +
@@ -51,7 +48,6 @@ public class MySQL {
                 ")";
     }
 
-    //Main
     public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;

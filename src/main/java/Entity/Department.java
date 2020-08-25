@@ -16,6 +16,17 @@ public class Department {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
     private List<Employee> employees;
 
+    public Department(int departmentId, String departmentName, List<Employee> employees) {
+        super();
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+        this.employees = employees;
+    }
+
+    public Department() {
+        super();
+    }
+
     public int getDepartmentId() {
         return departmentId;
     }
@@ -38,5 +49,10 @@ public class Department {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(departmentId);
     }
 }

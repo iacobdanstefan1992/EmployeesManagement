@@ -1,7 +1,6 @@
 package Entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -16,6 +15,17 @@ public class JobCategory {
     private String jobCategoryName;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "jobCategory")
     private List<Employee> employees;
+
+    public JobCategory(int jobCategoryId, String jobCategoryName, List<Employee> employees) {
+        super();
+        this.jobCategoryId = jobCategoryId;
+        this.jobCategoryName = jobCategoryName;
+        this.employees = employees;
+    }
+
+    public JobCategory() {
+        super();
+    }
 
     public int getJobCategoryId() {
         return jobCategoryId;
@@ -39,5 +49,10 @@ public class JobCategory {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(jobCategoryId);
     }
 }

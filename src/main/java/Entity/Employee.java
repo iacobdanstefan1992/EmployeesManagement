@@ -50,6 +50,38 @@ public class Employee {
     @JoinColumn(name = "job_category_id")
     private JobCategory jobCategory;
 
+    public Employee(int id, String firstName, String lastName, int isManager,
+                    LocalDateTime startDate, LocalDateTime endDate, int active,
+                    String address, String cp, String telephone, String email,
+                    LocalDateTime birthday, int noChildren, double salary,
+                    String studies, String socialSecurityNumber, int hasDrivingLicence,
+                    Department department, JobCategory jobCategory) {
+        super();
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.isManager = isManager;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.active = active;
+        this.address = address;
+        this.cp = cp;
+        this.telephone = telephone;
+        this.email = email;
+        this.birthday = birthday;
+        this.noChildren = noChildren;
+        this.salary = salary;
+        this.studies = studies;
+        this.socialSecurityNumber = socialSecurityNumber;
+        this.hasDrivingLicence = hasDrivingLicence;
+        this.department = department;
+        this.jobCategory = jobCategory;
+    }
+
+    public Employee() {
+        super();
+    }
+
     public int getId() {
         return id;
     }
@@ -200,5 +232,30 @@ public class Employee {
 
     public void setJobCategory(JobCategory jobCategory) {
         this.jobCategory = jobCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", isManager=" + isManager +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", active=" + active +
+                ", address='" + address + '\'' +
+                ", cp='" + cp + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                ", noChildren=" + noChildren +
+                ", salary=" + salary +
+                ", studies='" + studies + '\'' +
+                ", socialSecurityNumber='" + socialSecurityNumber + '\'' +
+                ", hasDrivingLicence=" + hasDrivingLicence +
+                ", department=" + department +
+                ", jobCategory=" + jobCategory +
+                '}';
     }
 }
