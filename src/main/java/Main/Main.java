@@ -261,7 +261,6 @@ public class Main {
                 default:
                     System.out.println("Choose from 1 to 5");
                     somethingWrong = true;
-                    break;
             }
         }while (somethingWrong);
     }
